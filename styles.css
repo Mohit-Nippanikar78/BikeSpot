@@ -3,6 +3,20 @@
   --main-bg: #00a97cd0;
   --main-bg-a: #00a97cd0;
   --home-main-opts: 18.75rem;
+  --input-color: #99a3ba;
+  --input-border: #cdd9ed;
+  --input-background: #fff;
+  --input-placeholder: #cbd1dc;
+
+  --input-border-focus: #275efe;
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #eef4ff;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #678efe;
 }
 h3,
 h4 {
@@ -16,7 +30,7 @@ h4 {
 body {
   overflow-x: hidden;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
 .home {
@@ -319,7 +333,7 @@ label span {
 .sec-top-head span {
   position: relative;
 }
-.sec-top-head span::after {
+.sec-top-head::after {
   content: "";
   display: block;
   width: 5rem;
@@ -327,12 +341,11 @@ label span {
   border-radius: 10px;
   background: black;
   position: absolute;
-  bottom: -50%;
+  bottom: 24%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto;
 }
-.sec-top-head span::before {
+.sec-top-head::before {
   content: "";
   display: block;
   width: 3rem;
@@ -340,10 +353,9 @@ label span {
   border-radius: 10px;
   background: black;
   position: absolute;
-  bottom: -70%;
+  bottom: 19%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto;
 }
 .sec-top-head span {
   color: var(--main-bg);
@@ -523,4 +535,398 @@ label span {
   width: 1rem;
 
   fill: white;
+}
+.carousel {
+  margin: 6rem 0 2rem 0;
+  width: 100vw;
+  height: 25rem;
+  background: url("./images/bike-4.jpg") no-repeat center;
+  background-size: cover;
+  background-position-y: 67%;
+  position: relative;
+}
+.carousel::before {
+  z-index: 1;
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 25rem;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: visible;
+}
+.carousel-con {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.carousel-con-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+}
+.carousel-con-card svg {
+  margin-bottom: 1rem;
+  width: 4rem;
+  height: 4rem;
+  fill: white;
+}
+.carousel-con-card h3 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.carousel-con-card h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.carousel-con-card h4 span {
+  color: var(--main-bg);
+}
+.blog-cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 3rem 0;
+}
+.blog-card {
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  width: clamp(200px, 20vw, 400px);
+}
+.blog-card-img {
+  position: relative;
+}
+.blog-card-img img {
+  width: 100%;
+}
+.blog-card-img-over {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.blog-card-img-over img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  position: relative;
+  bottom: -1rem;
+  right: 1rem;
+}
+.blog-card-con {
+  font-family: Roboto;
+  margin: 1rem;
+}
+.blog-card-con-info {
+  color: #727272;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+}
+.blog-card-con-info h5 {
+  letter-spacing: 0.05rem;
+  margin-right: 0.5rem;
+}
+.blog-card-con-main {
+  color: #3b3b3c;
+  font-family: Roboto;
+  font-weight: 600;
+}
+.review-cards {
+  justify-content: space-evenly;
+}
+.review-card {
+  width: clamp(200px, 20vw, 400px);
+  background-color: white;
+}
+
+.review-card-head {
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  margin-bottom: 1rem;
+}
+.review-card-id {
+  display: flex;
+  justify-content: space-between;
+}
+.review-card-id-info-name {
+  font-size: 0.8rem;
+  margin-bottom: 0.1rem;
+}
+
+.review-card-id-info-com {
+  font-size: 0.8rem;
+  color: #727272;
+  margin-bottom: 0.4rem;
+}
+.review-card-id-info-stars {
+  width: 4rem;
+}
+.review-card-id-img img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+.review-card-id-svg svg {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin: 0.3rem;
+  fill: #605c55;
+}
+.inspect {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  font-family: Roboto;
+  margin: 5% 0;
+}
+.inspect-img {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15rem;
+}
+.inspect-img img {
+  width: clamp(200px, 20vw, 400px);
+}
+.inspect-top {
+  margin-bottom: 0.4rem;
+}
+.inspect-head {
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.inspect-info {
+  width: clamp(200px, 100%, 500px);
+}
+.inspect-lists {
+  margin: 1rem 1rem 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.inspect-list {
+  display: flex;
+  align-items: center;
+}
+.inspect-list svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  fill: var(--main-bg);
+}
+.inspect-btn button {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+.ad {
+  background: #72727212;
+  backdrop-filter: blur(5px);
+}
+.ad-coms {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 3rem 0;
+}
+.ad-com {
+}
+.ad-com img {
+  width: 7rem;
+}
+.ad-com-name div {
+  text-align: center;
+}
+.install-carousel {
+  height: 30rem;
+}
+.install-carousel::before {
+  height: 30rem;
+}
+.install-con {
+  display: grid;
+  overflow: hidden;
+
+  grid-template-columns: repeat(2, 1fr);
+}
+.install-con-hand {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.install-con-hand img {
+  height: 30rem;
+}
+.install-con-info {
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.install-con-info-top {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #afa9a0;
+}
+.install-con-info-head {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
+.install-con-infos {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+.install-con-infos li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.install-con-infos li svg {
+  margin: 0.5rem 1rem 0.5rem 0;
+  fill: white;
+  width: 1.2rem;
+  transform: rotate(90deg);
+  height: max-content;
+}
+.install-con-info-lists {
+  display: flex;
+}
+.install-con-info-list {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 200;
+  display: flex;
+  justify-content: space-around;
+  width: 13rem;
+  align-items: center;
+  border: 1px solid white;
+  padding: 0.4rem 0.5rem;
+}
+.install-con-info-list:first-of-type {
+  margin-right: 1rem;
+}
+.install-con-info-list img {
+  width: 2rem;
+  filter: grayscale(1) invert(1);
+}
+.install-con-info-list-info-main {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+footer h3 {
+  text-align: center;
+
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  margin-bottom: 1rem;
+  color: #3b3b3c;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.foot-texts {
+  font-family: Roboto;
+  color: #727272;
+  letter-spacing: 0.02rem;
+  font-size: 0.9rem;
+}
+.foot-p1 img {
+  width: 10rem;
+}
+.foot-p1-con {
+  max-width: 17rem;
+}
+.foot-p2 {
+  display: inline;
+}
+.foot-p2-heads {
+  display: flex;
+}
+.foot-p2-heads h3:first-of-type {
+  margin-right: 2rem;
+}
+.foot-p2 ul {
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  list-style-type: none;
+}
+.foot-p2 li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.foot-p2 img {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+.foot-p3 {
+  max-width: 500px;
+}
+.foot-p3-gmail {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin:1rem 0 ;
+}
+.foot-p3-input {
+  width: 100%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  color: var(--input-color);
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+  border-radius: 6px 0 0 6px;
+}
+.foot-p3-input::placeholder {
+  color: var(--input-placeholder);
+}
+.foot-p3-input:focus {
+  outline: none;
+  border-color: var(--main-bg);
+}
+
+.foot-p3-gmail span {
+  border-radius: 0 6px 6px 0;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 25px;
+  color: var(--group-color);
+  background: var(--group-background);
+  border: 1px solid var(--group-border);
+  transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+}
+.foot-p3-input:focus-within ~ span {
+  color: var(--group-color-focus);
+  background: var(--main-bg);
+  border-color: var(--main-bg);
 }
